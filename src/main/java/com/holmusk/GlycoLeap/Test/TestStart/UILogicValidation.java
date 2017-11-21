@@ -28,6 +28,7 @@ public class UILogicValidation extends UIBaseTest implements UIBaseTestType,
             dataProvider = "engineProvider"
     )
     public UILogicValidation(@NotNull Engine<?> engine) {
+
         super(engine);
     }
 

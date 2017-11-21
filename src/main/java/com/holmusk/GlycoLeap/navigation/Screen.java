@@ -13,6 +13,7 @@ import org.swiften.xtestkit.navigation.NavigationSupplier;
 public enum Screen implements ScreenInitType{
 
     SPLASH,
+    OK,
     WELCOME,
     LOGIN,
     FORGOT_PASSWORD,

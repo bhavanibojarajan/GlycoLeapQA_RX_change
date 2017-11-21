@@ -7,6 +7,8 @@ import org.swiften.xtestkit.base.Engine;
 
 public interface WelcomeActionType extends BaseActionType, WelcomeValidationType {
 
+
+
     /**
      * Navigate to {@link com.holmusk.GlycoLeap.navigation.Screen#LOGIN}.
      * @param engine {@link Engine} instance.
@@ -15,6 +17,7 @@ public interface WelcomeActionType extends BaseActionType, WelcomeValidationType
      */
     @NotNull
     default Flowable<?> rxa_loginFromWelcome(@NotNull Engine<?> engine) {
+
         return rxe_welcomeLogin(engine).compose(engine.clickFn());
     }
 
@@ -26,7 +29,7 @@ public interface WelcomeActionType extends BaseActionType, WelcomeValidationType
      * @see #rxe_welcomeLogin(Engine)
      */
     @NotNull
-    default Flowable<?> rxa_okbuttonWelcome(@NotNull Engine<?> engine) {
+    default Flowable<?> rxa_okFromWelcome(@NotNull Engine<?> engine) {
         return rxe_okwelcome(engine).compose(engine.clickFn());
     }
 

@@ -101,7 +101,9 @@ public class ScreenHolder implements ScreenType,
                         )
                 );
 
+
             case WELCOME:
+
                 return HPIterables.asList(
                         new Direction(
                                 ScreenHolder.of(ENGINE, Screen.LOGIN, MODE),
@@ -312,8 +314,10 @@ public class ScreenHolder implements ScreenType,
             case SPLASH:
                 return HPIterables.asList();
 
+
             case WELCOME:
                 return HPIterables.asList();
+
 
             case LOGIN:
                 return HPIterables.asList(

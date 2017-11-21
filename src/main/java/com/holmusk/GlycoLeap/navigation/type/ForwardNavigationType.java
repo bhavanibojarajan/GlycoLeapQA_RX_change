@@ -12,6 +12,7 @@ import com.holmusk.GlycoLeap.Test.welcome.WelcomeActionType;
 import com.holmusk.HMUITestKit.model.HMCSSInputType;
 import io.reactivex.Flowable;
 import org.jetbrains.annotations.NotNull;
+import org.openqa.selenium.WebElement;
 import org.swiften.xtestkit.base.Engine;
 import com.holmusk.GlycoLeap.model.DrawerItem;
 import com.holmusk.GlycoLeap.model.CSSInput;
@@ -41,6 +42,7 @@ public interface ForwardNavigationType extends
      */
     @NotNull
     default Flowable<?> rxn_splash_welcome(@NotNull Engine<?> engine) {
+
         return Flowable.timer(splashDelay(engine), TimeUnit.MILLISECONDS);
     }
 
@@ -106,6 +108,9 @@ public interface ForwardNavigationType extends
     default Flowable<?> rxn_welcome_register(@NotNull Engine<?> engine) {
         return rxa_registerFromWelcome(engine);
     }
+
+
+
 
     /**
      * {@link com.holmusk.GlycoLeap.navigation.Screen#REGISTER}
@@ -295,6 +300,17 @@ public interface ForwardNavigationType extends
         return rxa_loginFromWelcome(engine);
     }
 
+    /**
+     * {@link com.holmusk.GlycoLeap.navigation.Screen#WELCOME}
+     * {@link com.holmusk.GlycoLeap.navigation.Screen#LOGIN}
+     * @param engine {@link Engine} instance.
+     * @return {@link Flowable} instance.
+     * @see #rxa_loginFromWelcome(Engine)
+     */
+    @NotNull
+    default Flowable<?> rxn_welcome_ok(@NotNull Engine<?> engine) {
+        return rxa_okFromWelcome(engine);
+    }
 
 
 }

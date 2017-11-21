@@ -3,6 +3,7 @@ package com.holmusk.GlycoLeap.Test.welcome;
 import io.reactivex.Flowable;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.WebElement;
+import org.swiften.javautilities.bool.HPBooleans;
 import org.swiften.javautilities.object.HPObjects;
 import org.swiften.xtestkit.base.Engine;
 import com.holmusk.GlycoLeap.Test.base.BaseValidationType;
@@ -46,9 +47,11 @@ public interface WelcomeValidationType extends BaseValidationType {
     @NotNull
     default Flowable<WebElement> rxe_okwelcome(@NotNull Engine<?> engine) {
         return engine
-                .rxe_containsText("welcome_title_ok")
+                .rxe_containsID("button1")
                 .firstElement()
                 .toFlowable();
+
+
     }
 
 

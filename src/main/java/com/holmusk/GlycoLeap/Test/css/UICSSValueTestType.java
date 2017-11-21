@@ -6,7 +6,7 @@ import com.holmusk.GlycoLeap.model.UserMode;
 import com.holmusk.GlycoLeap.navigation.Screen;
 import com.holmusk.GlycoLeap.Test.base.UIBaseTestType;
 import com.holmusk.HMUITestKit.test.circlescrollselector.HMCircleScrollActionType;
-import com.holmusk.HMUITestKit.test.circlescrollselector.HMCircleScrollValidationType;
+
 import io.reactivex.Flowable;
 import io.reactivex.subscribers.TestSubscriber;
 import org.jetbrains.annotations.NotNull;

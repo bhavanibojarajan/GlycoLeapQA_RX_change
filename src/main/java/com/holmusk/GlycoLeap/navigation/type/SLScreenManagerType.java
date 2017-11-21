@@ -10,6 +10,7 @@ import org.swiften.xtestkit.navigation.ScreenManagerType;
 import org.swiften.xtestkit.navigation.ScreenType;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 public interface SLScreenManagerType extends ScreenManagerType {
@@ -45,6 +46,25 @@ public interface SLScreenManagerType extends ScreenManagerType {
                 .toArray(ScreenHolder[]::new);
     }
 
+
+    /**
+     * Register a varargs of {@link ScreenType}.
+     * @param screens A varargs of {@link ScreenType}.
+     * @see #register(Collection)
+     */
+    default void register(@NotNull ScreenType...screens) {
+        register(Arrays.asList(screens));
+    }
+
+    /**
+     * Register {@link Collection} of {@link ScreenType}.
+     * @param screens {@link Collection} of {@link ScreenType}.
+     * @see #register(ScreenType)
+     */
+    default void register(@NotNull Collection<? extends ScreenType> screens) {
+        final ScreenManagerType THIS = this;
+        screens.forEach(THIS::register);
+    }
     /**
      * Convenience method to navigate from one {@link Screen} to another.
      * @param mode {@link UserMode} instance.
