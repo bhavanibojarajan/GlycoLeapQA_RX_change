@@ -92,10 +92,19 @@ public class ScreenHolder implements ScreenType,
         PlatformType platform = ENGINE.platform();
 
         switch (SCREEN) {
+            case OK:
+                 return HPIterables.asList(
+                    new Direction(
+                            ScreenHolder.of(ENGINE, Screen.WELCOME, MODE),
+                            a -> THIS.rxn_welcome_ok(ENGINE),
+                            platform
+                    )
+            );
+
             case SPLASH:
                 return HPIterables.asList(
                         new Direction(
-                                ScreenHolder.of(ENGINE, Screen.WELCOME, MODE),
+                                ScreenHolder.of(ENGINE, Screen.OK, MODE),
                                 a -> THIS.rxn_splash_welcome(ENGINE),
                                 platform
                         )

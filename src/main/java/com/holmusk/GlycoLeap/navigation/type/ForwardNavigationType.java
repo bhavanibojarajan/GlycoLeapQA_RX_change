@@ -309,6 +309,8 @@ public interface ForwardNavigationType extends
      */
     @NotNull
     default Flowable<?> rxn_welcome_ok(@NotNull Engine<?> engine) {
+        //Handle OK click
+
         return rxa_okFromWelcome(engine);
     }
 
